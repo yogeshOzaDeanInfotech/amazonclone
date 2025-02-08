@@ -1,22 +1,26 @@
-import React, { useState } from 'react'
+import React from "react";
 
-const App = () => {
-  const [count , setCount] = useState(0);
-  // function handlecountIncrement(){
-  //   setCount(count + 1);
-  // }
 
-  // function handlecountDecrement(){
-  //   setCount(count - 1);
-  // }
-
-  return (
-    <div>
-      <h1>Count : {count}</h1>
-      <button onClick={()=>setCount(count + 1)}>+</button>
-      <button onClick={()=>setCount(count - 1)}>-</button>
-    </div>
-  )
+// class component is a statefull component
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state ={
+      count : 0,
+      name : "superman"
+    }
+  }
+  
+  render(){
+    return(
+      <div>
+        <h1>Welcome to Amazon Clone</h1>
+        <h2>welcome :{this.state.name} </h2>
+        <h2>welcome :{this.state.count} </h2>
+        <button onClick={()=> this.setState({name : "spiderman", count : 20})}>Change</button>
+      </div>
+    )
+  }
 }
 
-export default App
+export default App;
