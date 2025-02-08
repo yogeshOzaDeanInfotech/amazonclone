@@ -1,16 +1,19 @@
-
-// normal js functions
-// export default function App () {
-//   return (
-//     <div>Hello world!!</div>
-//   )
-// }
-
-
 // arrow function
-const App= () =>{
+const App = () =>{
+  // variable declare
+  let count = 10;
+  console.log("Count :",count);
+  
+  function handleCountChange () {
+    count = 20;
+    console.log("Count :",count);
+  }
+
   return (
-    <div>Hello world!!</div>
+    <div>
+        <h1>Count :{count}</h1>
+        <button onClick={handleCountChange}>change Number</button>
+    </div>
   )
 }
 
