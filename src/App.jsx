@@ -1,20 +1,22 @@
-// arrow function
-const App = () =>{
-  // variable declare
-  let count = 10;
-  console.log("Count :",count);
-  
-  function handleCountChange () {
-    count = 20;
-    console.log("Count :",count);
-  }
+import React, { useState } from 'react'
 
+const App = () => {
+  const [count , setCount] = useState(0);
+  
+  // function handlecountIncrement(){
+  //   setCount(count + 1);
+  // }
+
+  // function handlecountDecrement(){
+  //   setCount(count - 1);
+  // }
   return (
     <div>
-        <h1>Count :{count}</h1>
-        <button onClick={handleCountChange}>change Number</button>
+      <h1>Count : {count}</h1>
+      <button onClick={()=>setCount(count + 1)}>+</button>
+      <button onClick={()=>setCount(count - 1)}>-</button>
     </div>
   )
 }
 
-export default App;
+export default App
