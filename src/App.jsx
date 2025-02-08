@@ -1,9 +1,17 @@
-import React from 'react'
 
-const App = () => {
+// normal js functions
+// export default function App () {
+//   return (
+//     <div>Hello world!!</div>
+//   )
+// }
+
+
+// arrow function
+const App= () =>{
   return (
-    <div>App</div>
+    <div>Hello world!!</div>
   )
 }
 
-export default App
+export default App;
