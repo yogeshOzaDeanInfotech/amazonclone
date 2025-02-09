@@ -1,19 +1,10 @@
-import React from "react";
+import React from 'react'
 
-class Header extends React.PureComponent {
-
-    constructor(props){
-        super(props);
-    }
-    render() {
-        console.log("header re-rendered")
-        return (
-            <div>
-                <h1>Header : Welcome {this.props.name}</h1>
-                <hr />
-            </div>
-        );
-    }
+const Header = (props) => {
+    console.log("Header component  is re-rendered")
+  return (
+    <div>Header : name is {props.name}</div>
+  )
 }
 
-export default Header;
+export default React.memo(Header);

@@ -1,28 +1,20 @@
-import React from "react";
 import Header from "./Header";
 
-// class component is a statefull component
-class App extends React.Component{
-  constructor(){
-    super();
-    this.state ={
-      count : 0,
-      name : "Batman"
-    }
-  }
-  
-  render(){
-    return(
-      <div>
-        <Header  name = {this.state.name} />
-        <h2>App component</h2>
-        <h2>Count :{this.state.count} </h2>
-        <button onClick={()=> this.setState({count : this.state.count + 1})}>+</button>
-        <br />
-        <button onClick={()=> this.setState({name : "superman"})}>Change name</button>
-      </div>
-    )
-  }
+import { useState } from "react";
+
+const App = () =>{
+
+  const [count, setCount]= useState(0);
+  const [name, setName]= useState("batman");
+  return(
+    <div>
+      <Header name = {name}/>
+      <hr />
+      <h1>Count : {count}</h1>
+      <button onClick={()=> setCount(count + 1)}>+</button>
+      <button onClick={()=> setName("superman")}>Change name</button>
+    </div>
+  )
 }
 
 export default App;
