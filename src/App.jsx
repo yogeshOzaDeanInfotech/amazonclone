@@ -1,5 +1,5 @@
 import React from "react";
-
+import Header from "./Header";
 
 // class component is a statefull component
 class App extends React.Component{
@@ -7,17 +7,19 @@ class App extends React.Component{
     super();
     this.state ={
       count : 0,
-      name : "superman"
+      name : "Batman"
     }
   }
   
   render(){
     return(
       <div>
-        <h1>Welcome to Amazon Clone</h1>
-        <h2>welcome :{this.state.name} </h2>
-        <h2>welcome :{this.state.count} </h2>
-        <button onClick={()=> this.setState({name : "spiderman", count : 20})}>Change</button>
+        <Header  name = {this.state.name} />
+        <h2>App component</h2>
+        <h2>Count :{this.state.count} </h2>
+        <button onClick={()=> this.setState({count : this.state.count + 1})}>+</button>
+        <br />
+        <button onClick={()=> this.setState({name : "superman"})}>Change name</button>
       </div>
     )
   }
