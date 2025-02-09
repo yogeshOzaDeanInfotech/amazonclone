@@ -1,20 +1,17 @@
-import Header from "./Header";
+import React, { useState } from 'react'
+import Demo1 from './Demo1'
 
-import { useState } from "react";
+const App = () => {
+  const [name, setName]=useState(null);
 
-const App = () =>{
-
-  const [count, setCount]= useState(0);
-  const [name, setName]= useState("batman");
-  return(
+  return (
     <div>
-      <Header name = {name}/>
+      <h1>Parent App component</h1>
+      <h2>Name form child : {name}</h2>
       <hr />
-      <h1>Count : {count}</h1>
-      <button onClick={()=> setCount(count + 1)}>+</button>
-      <button onClick={()=> setName("superman")}>Change name</button>
+      <Demo1 count= "10" setName={setName}/>
     </div>
   )
 }
 
-export default App;
+export default App
