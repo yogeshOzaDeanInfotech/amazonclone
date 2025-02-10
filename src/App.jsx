@@ -1,21 +1,15 @@
 import Child1 from "./Child1";
 
-import { useState } from "react";
-
 const App = () =>{
-  const [message, setMessage] = useState("This is a message from the parent component");
-
   return (
     <div>
-      <h1>Parent component</h1>
-      <hr />
-      <Child1  message={message} />
+      <Child1>
+        <h1>Header</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi distinctio nam iure facere cumque dolorem obcaecati soluta ea, dolore, est aut blanditiis sed veniam quidem deleniti similique iusto, culpa numquam.</p>
+        <h2>Data</h2>
+      </Child1>
     </div>
   )
 }
 
 export default App;
-
-// property type  => 
-
-  // nested children => parent component (app) => child 3
