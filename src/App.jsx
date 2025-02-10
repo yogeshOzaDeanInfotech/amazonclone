@@ -5,7 +5,7 @@ export default class App extends Component {
   constructor(){
     super();
     this.state = {
-      isDelete : false
+      count : 0
     }
   }
 
@@ -13,14 +13,11 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {this.state.isDelete ? null : <Demo1/>}
+        <Demo1 count={this.state.count}/>
         <hr /> 
         <h2>App Component</h2>
-        <button onClick={()=> this.setState({isDelete : true})}>Remove</button>
+        <button>Remove</button>
       </div>
     )
   }
-
-
-
 }
