@@ -1,23 +1,21 @@
-import React, { Component } from 'react'
-import Demo1 from './Demo1';
-export default class App extends Component {
-  
-  constructor(){
-    super();
-    this.state = {
-      count : 0
-    }
-  }
+import Child1 from "./Child1";
 
+import { useState } from "react";
 
-  render() {
-    return (
-      <div>
-        <Demo1 count={this.state.count}/>
-        <hr /> 
-        <h2>App Component</h2>
-        <button>Remove</button>
-      </div>
-    )
-  }
+const App = () =>{
+  const [message, setMessage] = useState("This is a message from the parent component");
+
+  return (
+    <div>
+      <h1>Parent component</h1>
+      <hr />
+      <Child1  message={message} />
+    </div>
+  )
 }
+
+export default App;
+
+// property type  => 
+
+  // nested children => parent component (app) => child 3
